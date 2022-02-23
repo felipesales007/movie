@@ -40,13 +40,13 @@ export default {
 }
 
 .fe-search .content {
-  padding: 63px 40px;
+  padding: 93px 40px;
 }
 
 .fe-search .title h1 {
   font-size: 48px;
   line-height: 0.8;
-  font-weight: bold;
+  font-weight: 700;
 }
 
 .fe-search .search form {
