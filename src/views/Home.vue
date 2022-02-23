@@ -1,5 +1,8 @@
 <template>
-  <fe-search/>
+  <div>
+    <fe-search/>
+    <fe-scroll-films/>
+  </div>
 </template>
 
 <script>
