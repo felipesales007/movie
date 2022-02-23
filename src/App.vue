@@ -1,3 +1,6 @@
 <template>
-  <router-view/>
+  <div>
+    <fe-navbar/>
+    <router-view/>
+  </div>
 </template>

@@ -1,0 +1,45 @@
+body {
+    font-family: 'Source Sans Pro', Arial, sans-serif !important;
+}
+
+:focus,
+.btn-outline-light:focus,
+.nav-item:focus-visible,
+.nav-link:focus-visible {
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+.popover {
+    max-width: 241px;
+}
+
+.popover-body {
+    padding: 0.8rem 0.8rem;
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+.bs-popover-bottom {
+    margin-top: 5px;
+}
+
+.popover .arrow {
+    position: absolute;
+}
+
+.bs-popover-bottom > .arrow {
+    top: -14px;
+}
+
+.popover .arrow:before,
+.popover .arrow:after {
+    display: block;
+    content: '';
+    border-style: solid;
+}
+
+.bs-popover-bottom > .arrow:after {
+    border-width: 0 0.5rem 0.5rem;
+    border-bottom-color: #ffffff;
+}
