@@ -13,6 +13,7 @@
 
 <script>
 import FeCardFilms from '@/components/Cards/Film'
+
 export default {
   name: 'fe-scroll-films',
   components: { FeCardFilms },
