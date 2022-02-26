@@ -5,7 +5,7 @@
       <div class="scroll"/>
       <fe-tabs :title="popular.title" :data="popular.data"/>
       <fe-tabs :title="free.title" :data="free.data"/>
-      <fe-tabs :title="tendencies.title" :data="tendencies.data"/>
+      <fe-tabs :title="tendencies.title" :data="tendencies.data" background/>
     </div>
   </div>
 </template>

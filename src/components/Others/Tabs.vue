@@ -1,5 +1,5 @@
 <template>
-  <div class="fe-tabs">
+  <div class="fe-tabs" :class="{'background': background}">
     <b-tabs>
       <b-tab :title="title" disabled/>
       <b-tab title="Streaming" active @click="style()">
@@ -29,6 +29,11 @@ export default {
       default: ()=> [],
       description: 'Listagem de filmes'
     },
+    background: {
+      type: Boolean,
+      default: false,
+      description: 'Imagem de fundo'
+    },
   },
   methods: {
     style() {
@@ -54,6 +59,14 @@ export default {
 <style>
 .fe-tabs {
   margin-top: 31px;
+}
+
+.fe-tabs.background {
+  background-image: url('@/assets/img/background.png');
+  background-position: 50% 200px;
+  background-size: 1400px;
+  background-repeat: no-repeat;
+  background-position-y: bottom;
 }
 
 .fe-tabs .tab-content {
