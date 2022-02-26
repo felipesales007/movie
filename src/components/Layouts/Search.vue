@@ -1,9 +1,9 @@
 <template>
-  <div class="fe-search">
+  <div class="fe-search" :style="`background-image: linear-gradient(to right, rgba(3, 37, 65, 0.8) 0%, rgba(3, 37, 65, 0) 100%), url('https://image.tmdb.org/t/p/w1920_and_h600_multi_faces_filter(duotone,032541,01b4e4)/` + background + `')`">
     <div class="content">
       <div class="title">
-        <h1>Bem-Vindo(a).</h1>
-        <h2>Milhões de Filmes, Séries e Pessoas para Descobrir. Explore já.</h2>
+        <h1>{{ title }}</h1>
+        <h2>{{ subTitle }}</h2>
       </div>
       <div class="search">
         <form>
@@ -21,18 +21,37 @@ export default {
   props: {
     title: {
       type: String,
+      required: true,
       description: 'Título'
+    },
+    subTitle: {
+      type: String,
+      required: true,
+      description: 'Sub-título'
+    },
+    background: {
+      type: String,
+      required: true,
+      description: 'Imagem de fundo'
     },
   },
 }
 </script>
 
 <style>
+
+.fe-search  .image {
+  width: 150px;
+  height: 225px;
+  border-radius: 8px;
+  background-position: top center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
 .fe-search {
   height: calc(100vh / 2.5);
   min-height: 300px;
   max-height: 360px;
-  background-image: linear-gradient(to right, rgba(3, 37, 65, 0.8) 0%, rgba(3, 37, 65, 0) 100%), url('https://www.themoviedb.org/t/p/w1920_and_h600_multi_faces_filter(duotone,032541,01b4e4)/34OGjFEbHj0E3lE2w0iTUVq0CBz.jpg');
   background-position: top center;
   background-size: cover;
   background-repeat: no-repeat;

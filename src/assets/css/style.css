@@ -46,7 +46,7 @@ a:hover {
     position: relative;
 }
 
-.scroll:before {
+.shadow:before {
     content: '';
     position: absolute;
     width: 60px;
