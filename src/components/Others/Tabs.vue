@@ -1,11 +1,22 @@
 <template>
-  <div class="fe-tabs">
+  <div class="fe-tabs mt-4">
     <b-tabs content-class="mt-3">
       <b-tab title="Os Mais Populares" disabled/>
-      <b-tab title="Streaming" active @click="style()"><p>I'm the first tab</p></b-tab>
-      <b-tab title="Na TV" @click="style()"><p>I'm the second tab</p></b-tab>
-      <b-tab title="Para Alugar" @click="style()"><p>I'm a disabled tab!</p></b-tab>
-      <b-tab title="Nos Cinemas" @click="style()"><p>I'm a disabled tab!</p></b-tab>
+      <b-tab title="Streaming" active @click="style()">
+        <fe-card-films/>
+        <fe-card-films/>
+        <fe-card-films/>
+        <fe-card-films/>
+        <fe-card-films/>
+        <fe-card-films/>
+        <fe-card-films/>
+        <fe-card-films/>
+        <fe-card-films/>
+        <fe-card-films/>
+        <fe-card-films/>
+        <fe-card-films/>
+        <fe-card-films/>
+      </b-tab>
     </b-tabs>
   </div>
 </template>
@@ -41,8 +52,26 @@ export default {
 </script>
 
 <style>
-.fe-tabs {
-  margin-left: 40px;
+.fe-tabs .tab-pane {
+  display: flex !important;
+  overflow: auto;
+  padding-bottom: 40px;
+}
+
+.fe-tabs .tab-pane:after {
+  content: '';
+  position: absolute;
+  width: 60px;
+  height: 100%;
+  right: 0;
+  margin-right: 52px;
+  background-image: linear-gradient(to right, rgba(255,255,255,0) 0%, #fff 100%);
+  will-change: opacity;
+  pointer-events: none;
+}
+
+.fe-tabs .tab-pane .fe-card-films {
+  margin-right: 20px;
 }
 
 .fe-tabs .disabled {

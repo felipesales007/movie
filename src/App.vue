@@ -1,6 +1,10 @@
 <template>
   <div>
     <fe-navbar/>
-    <router-view/>
+    <div class="main">
+      <div class="content">
+        <router-view/>
+      </div>
+    </div>
   </div>
 </template>

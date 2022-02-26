@@ -1,7 +1,6 @@
 <template>
   <div>
     <fe-search/>
-    <fe-scroll-films/>
     <fe-tabs/>
   </div>
 </template>
