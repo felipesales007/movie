@@ -1,14 +1,29 @@
 <template>
   <div>
+    <!-- Buscar por um Filme, Série ou Pessoa... -->
     <fe-search
       :title="search.title"
       :sub-title="search.subTitle"
       :background="search.background"/>
     <div class="media">
       <div class="shadow"/>
-      <fe-tabs :title="popular.title" :data="popular.data"/>
-      <fe-tabs :title="free.title" :data="free.data"/>
-      <fe-tabs :title="tendencies.title" :data="tendencies.data" background/>
+      <!-- Os Mais Populares -->
+      <fe-tabs
+        v-if="popular.data.length"
+        :title="popular.title"
+        :data="popular.data"/>
+      <!-- Grátis para Assistir -->
+      <fe-tabs
+        v-if="free.data.length"
+        :title="free.title"
+        :data="free.data"/>
+      <!-- Tendências -->
+      <fe-tabs
+        v-if="tendencies.data.length"
+        :title="tendencies.title"
+        :data="tendencies.data"
+        background/>
+      <!-- Junte-se Hoje -->
       <fe-banner
         :background="banner.background"
         :title="banner.title"
