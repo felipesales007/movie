@@ -23,18 +23,22 @@ export default {
   props: {
     image: {
       type: String,
+      required: true,
       description: 'Imagem'
     },
     title: {
       type: String,
+      required: true,
       description: 'Título'
     },
     date: {
       type: String,
+      required: true,
       description: 'Data'
     },
     percent: {
       type: Number,
+      required: true,
       description: 'Percentual de avaliação'
     },
   },

@@ -65,12 +65,6 @@
 <script>
 export default {
   name: 'fe-navbar',
-  props: {
-    items: {
-      type: Array,
-      description: 'Itens do menu'
-    },
-  },
   methods: {
     onOver(index) {
       this.$refs[`dropdown-${index}`].visible = true;
