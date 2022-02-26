@@ -45,7 +45,7 @@ export default {
       });
     },
   },
-  mounted () {
+  mounted() {
     this.style();
   },
 }
