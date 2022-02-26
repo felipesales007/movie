@@ -1,21 +1,15 @@
 <template>
-  <div class="fe-tabs mt-4">
-    <b-tabs content-class="mt-3">
-      <b-tab title="Os Mais Populares" disabled/>
+  <div class="fe-tabs">
+    <b-tabs>
+      <b-tab :title="title" disabled/>
       <b-tab title="Streaming" active @click="style()">
-        <fe-card-films/>
-        <fe-card-films/>
-        <fe-card-films/>
-        <fe-card-films/>
-        <fe-card-films/>
-        <fe-card-films/>
-        <fe-card-films/>
-        <fe-card-films/>
-        <fe-card-films/>
-        <fe-card-films/>
-        <fe-card-films/>
-        <fe-card-films/>
-        <fe-card-films/>
+        <div v-for="(item, index) in data" :key="index">
+          <fe-card-films
+            :image="item.poster_path"
+            :title="item.title"
+            :date="item.release_date"
+            :percent="item.vote_average"/>
+        </div>
       </b-tab>
     </b-tabs>
   </div>
@@ -27,7 +21,13 @@ export default {
   props: {
     title: {
       type: String,
+      required: true,
       description: 'Título'
+    },
+    data: {
+      type: Array,
+      default: ()=> [],
+      description: 'Listagem de filmes'
     },
   },
   methods: {
@@ -52,26 +52,30 @@ export default {
 </script>
 
 <style>
+.fe-tabs {
+  margin-top: 31px;
+}
+
+.fe-tabs .tab-content {
+  margin-top: 20px;
+}
+
 .fe-tabs .tab-pane {
   display: flex !important;
   overflow: auto;
-  padding-bottom: 40px;
+  padding-bottom: 41px;
 }
 
-.fe-tabs .tab-pane:after {
-  content: '';
-  position: absolute;
-  width: 60px;
-  height: 100%;
-  right: 0;
-  margin-right: 52px;
-  background-image: linear-gradient(to right, rgba(255,255,255,0) 0%, #fff 100%);
-  will-change: opacity;
-  pointer-events: none;
+.fe-tabs .tab-pane .fe-card-films:first-child {
+  margin-left: 40px;
 }
 
 .fe-tabs .tab-pane .fe-card-films {
-  margin-right: 20px;
+  margin-right: -20px;
+}
+
+.fe-tabs .disabled:first-child {
+  margin-left: 20px;
 }
 
 .fe-tabs .disabled {

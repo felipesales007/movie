@@ -2,17 +2,17 @@
   <div class="fe-card-films">
     <b-icon-filter-circle class="detail"/>
     <a href="javascript:void(0)">
-      <div class="image"/>
+      <div class="image" :style="`background-image: url(https://image.tmdb.org/t/p/w220_and_h330_face/` + image + `)`"/>
     </a>
     <div class="percent">
-      <span class="number">48</span>
+      <span class="number">{{ percent === 10 ? percent + '0' : String(percent).replace('.', '') }}</span>
       <span class="flag">%</span>
     </div>
     <div class="description">
       <a href="javascript:void(0)">
-        <div class="title">Indecente</div>
+        <div class="title">{{ title }}</div>
       </a>
-      <div class="date">13 de jan de 2022</div>
+      <div class="date">{{ $moment(date).format('DD') }} de {{ $moment(date).format('MMM') }} de {{ $moment(date).format('YYYY') }}</div>
     </div>
   </div>
 </template>
@@ -21,9 +21,21 @@
 export default {
   name: 'fe-card-films',
   props: {
+    image: {
+      type: String,
+      description: 'Imagem'
+    },
     title: {
       type: String,
       description: 'Título'
+    },
+    date: {
+      type: String,
+      description: 'Data'
+    },
+    percent: {
+      type: Number,
+      description: 'Percentual de avaliação'
     },
   },
 }
@@ -40,7 +52,6 @@ export default {
   width: 150px;
   height: 225px;
   border-radius: 8px;
-  background-image: url('https://www.themoviedb.org/t/p/w220_and_h330_face/A5v6Wi7lYR3a9m6CzntZWAcGFGV.jpg');
   background-position: top center;
   background-size: cover;
   background-repeat: no-repeat;
