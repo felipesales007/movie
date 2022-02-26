@@ -81,11 +81,13 @@ export default {
 }
 
 .fe-banner .button,
-.fe-banner .button:hover {
-  background-color: #805be7;
-  font-size: 17.7px;
+.fe-banner .button:hover,
+.fe-banner .button:active,
+.fe-banner .button:focus {
   padding: 7px 17px;
-  border-color: #805be7;
+  background-color: #805be7 !important;
+  font-size: 17.7px;
+  border-color: #805be7 !important;
 }
 
 .fe-banner .list {

@@ -6,5 +6,6 @@
         <router-view/>
       </div>
     </div>
+    <fe-footer/>
   </div>
 </template>
